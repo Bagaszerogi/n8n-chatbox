@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>n8n Chat Embed</title>
+  <script type="module">
+    import createChat from 'https://cdn.skypack.dev/@n8n/chat';
+
+    createChat({
+      webhookUrl: 'https://zerogi.app.n8n.cloud/webhook/53c136fe-3e77-4709-a143-fe82746dd8b6/chat',
+      webhookConfig: {
+        method: 'POST',
+        headers: {}
+      },
+      target: '#n8n-chat',
+      mode: 'window',
+      chatInputKey: 'chatInput',
+      chatSessionKey: 'sessionId',
+      metadata: {},
+      showWelcomeScreen: false,
+      defaultLanguage: 'en',
+      initialMessages: [
+        'Hi there! 👋',
+        'My name is Nathan. How can I assist you today?'
+      ],
+      i18n: {
+        en: {
+          title: 'Hi there! 👋',
+          subtitle: "Start a chat. We're here to help you 24/7.",
+          footer: '',
+          getStarted: 'New Conversation',
+          inputPlaceholder: 'Type your question...'
+        }
+      }
+    });
+  </script>
+</head>
+<body>
+  <div id="n8n-chat"></div>
+</body>
+</html>
